@@ -30,7 +30,7 @@ namespace ParticlesMenu
             {
                 Width = picDisplay.Width,
                 GravitationY = 0.2f,
-                ParticlesPerTick = 2,
+                ParticlesPerTick = 10,
             };
 
             emitters.Add(this.emitter);
@@ -38,7 +38,7 @@ namespace ParticlesMenu
 
             paint1 = new PainterPoint
             {
-                PointColor = Color.White,
+                PointColor = Color.Blue,
                 X = (picDisplay.Width / 2) - 200,
                 Y = (picDisplay.Height / 2) - 100,
                 Rad = 50,
@@ -55,8 +55,6 @@ namespace ParticlesMenu
             emitter.impactPoints.Add(paint1);
             emitter.impactPoints.Add(paint2);
 
-
-            
         }
 
 
@@ -86,9 +84,41 @@ namespace ParticlesMenu
                 emitter.MousePositionX = e.X;
                 emitter.MousePositionY = e.Y;
             }
-
-            
         }
 
+        private void XPaint1_Scroll(object sender, EventArgs e)
+        {
+            paint1.X = XPaint1.Value;
+        }
+
+        private void YPaint1_Scroll(object sender, EventArgs e)
+        {
+            paint1.Y = YPaint1.Value;
+        }
+
+        private void RadPaint1_Scroll(object sender, EventArgs e)
+        {
+            paint1.Rad = RadPaint1.Value;
+        }
+
+        private void XPaint2_Scroll(object sender, EventArgs e)
+        {
+            paint2.X = XPaint2.Value;
+        }
+
+        private void YPaint2_Scroll(object sender, EventArgs e)
+        {
+            paint2.Y = YPaint2.Value;
+        }
+
+        private void RadPaint2_Scroll(object sender, EventArgs e)
+        {
+            paint2.Rad = RadPaint2.Value;
+        }
+
+        private void ColorPaint1_1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
