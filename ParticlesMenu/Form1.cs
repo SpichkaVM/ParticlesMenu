@@ -116,9 +116,19 @@ namespace ParticlesMenu
             paint2.Rad = RadPaint2.Value;
         }
 
-        private void ColorPaint1_1_Click(object sender, EventArgs e)
+
+        private void ColorPaint1_Click(object sender, EventArgs e)
         {
-            
+            colorDialog.ShowDialog();
+            paint1.PointColor = colorDialog.Color;
+            ColorPaint1.BackColor = paint1.PointColor;
+        }
+
+        private void ColorPaint2_Click(object sender, EventArgs e)
+        {
+            colorDialog.ShowDialog();
+            paint2.PointColor = colorDialog.Color;
+            ColorPaint2.BackColor = paint2.PointColor;
         }
     }
 }

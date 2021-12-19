@@ -44,10 +44,12 @@ namespace ParticlesMenu
             this.XPaint2 = new System.Windows.Forms.TrackBar();
             this.YPaint2 = new System.Windows.Forms.TrackBar();
             this.RadPaint2 = new System.Windows.Forms.TrackBar();
-            this.ColorPaint1_1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ColorPaint1 = new System.Windows.Forms.Button();
+            this.ColorPaint2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ColorEmitter2 = new System.Windows.Forms.Button();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadPaint1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YPaint1)).BeginInit();
@@ -180,52 +182,63 @@ namespace ParticlesMenu
             this.RadPaint2.TabIndex = 7;
             this.RadPaint2.Scroll += new System.EventHandler(this.RadPaint2_Scroll);
             // 
-            // ColorPaint1_1
+            // ColorPaint1
             // 
-            this.ColorPaint1_1.Location = new System.Drawing.Point(12, 646);
-            this.ColorPaint1_1.Name = "ColorPaint1_1";
-            this.ColorPaint1_1.Size = new System.Drawing.Size(75, 23);
-            this.ColorPaint1_1.TabIndex = 13;
-            this.ColorPaint1_1.Text = "button1";
-            this.ColorPaint1_1.UseVisualStyleBackColor = true;
-            this.ColorPaint1_1.Click += new System.EventHandler(this.ColorPaint1_1_Click);
+            this.ColorPaint1.Location = new System.Drawing.Point(7, 667);
+            this.ColorPaint1.Name = "ColorPaint1";
+            this.ColorPaint1.Size = new System.Drawing.Size(75, 23);
+            this.ColorPaint1.TabIndex = 13;
+            this.ColorPaint1.Text = "Круг 1";
+            this.ColorPaint1.UseVisualStyleBackColor = true;
+            this.ColorPaint1.Click += new System.EventHandler(this.ColorPaint1_Click);
             // 
-            // button2
+            // ColorPaint2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 675);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ColorPaint2.Location = new System.Drawing.Point(7, 696);
+            this.ColorPaint2.Name = "ColorPaint2";
+            this.ColorPaint2.Size = new System.Drawing.Size(75, 23);
+            this.ColorPaint2.TabIndex = 14;
+            this.ColorPaint2.Text = "Круг 2";
+            this.ColorPaint2.UseVisualStyleBackColor = true;
+            this.ColorPaint2.Click += new System.EventHandler(this.ColorPaint2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(93, 646);
+            this.button3.Location = new System.Drawing.Point(311, 667);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 15;
-            this.button3.Text = "button3";
+            this.button3.Text = "Круг 3";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // ColorEmitter2
             // 
-            this.button4.Location = new System.Drawing.Point(93, 675);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.ColorEmitter2.Location = new System.Drawing.Point(311, 696);
+            this.ColorEmitter2.Name = "ColorEmitter2";
+            this.ColorEmitter2.Size = new System.Drawing.Size(75, 23);
+            this.ColorEmitter2.TabIndex = 16;
+            this.ColorEmitter2.Text = "Круг 4";
+            this.ColorEmitter2.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(52, 651);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Цвет кругов";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 763);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.ColorEmitter2);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.ColorPaint1_1);
+            this.Controls.Add(this.ColorPaint2);
+            this.Controls.Add(this.ColorPaint1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -269,10 +282,12 @@ namespace ParticlesMenu
         private System.Windows.Forms.TrackBar XPaint2;
         private System.Windows.Forms.TrackBar YPaint2;
         private System.Windows.Forms.TrackBar RadPaint2;
-        private System.Windows.Forms.Button ColorPaint1_1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ColorPaint1;
+        private System.Windows.Forms.Button ColorPaint2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ColorEmitter2;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.Label label7;
     }
 }
 
