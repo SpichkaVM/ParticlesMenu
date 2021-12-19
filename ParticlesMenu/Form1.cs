@@ -17,60 +17,63 @@ namespace ParticlesMenu
         List<Emitter> emitters = new List<Emitter>();
         Emitter emitter;
 
-        GravityPoint point1; 
-        GravityPoint point2;
+        //Поменял GravityPoint 
+        public PainterPoint paint1;
+        public PainterPoint paint2;
 
         public Form1()
         {
             InitializeComponent();
             picDisplay.Image = new Bitmap(picDisplay.Width, picDisplay.Height);
 
-            this.emitter = new Emitter 
+            emitter = new TopEmitter
             {
-                Direction = 0,
-                Spreading = 10,
-                SpeedMin = 10,
-                SpeedMax = 10,
-                ColorFrom = Color.Gold,
-                ColorTo = Color.FromArgb(0, Color.Red),
-                ParticlesPerTick = 10,
-                X = picDisplay.Width / 2,
-                Y = picDisplay.Height / 2,
+                Width = picDisplay.Width,
+                GravitationY = 0.2f,
+                ParticlesPerTick = 2,
             };
 
             emitters.Add(this.emitter);
 
 
-            point1 = new GravityPoint
+            paint1 = new PainterPoint
             {
-                X = picDisplay.Width / 2 + 100,
-                Y = picDisplay.Height / 2,
+                PointColor = Color.White,
+                X = (picDisplay.Width / 2) - 200,
+                Y = (picDisplay.Height / 2) - 100,
+                Rad = 50,
             };
-            point2 = new GravityPoint
+            paint2 = new PainterPoint
             {
-                X = picDisplay.Width / 2 - 100,
-                Y = picDisplay.Height / 2,
+                PointColor = Color.Red,
+                X = (picDisplay.Width / 2) + 200,
+                Y = (picDisplay.Height / 2) - 100,
+                Rad = 50,
             };
+
+
+            emitter.impactPoints.Add(paint1);
+            emitter.impactPoints.Add(paint2);
+
 
             
-            emitter.impactPoints.Add(point1);
-            emitter.impactPoints.Add(point2);
-
-
-            lblDirection.Text = $"{tbDirection.Value}°";
-            lblSpreading.Text = $"{tbSpreading.Value}°";
         }
 
 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            emitter.UpdateState();
-            using (var g = Graphics.FromImage(picDisplay.Image))
+            foreach (var emitter in emitters)
             {
-                g.Clear(Color.Black);
+                //Обновление состояния всех элементов эмиттера
+                emitter.UpdateState();
 
-                emitter.Render(g);
+                using (var g = Graphics.FromImage(picDisplay.Image))
+                {
+                    g.Clear(Color.Black);
+                    //Рендер всех элементов эмиттера
+                    emitter.Render(g);
+                }
             }
             picDisplay.Invalidate();
         }
@@ -85,30 +88,7 @@ namespace ParticlesMenu
             }
 
             
-            point2.X = e.X;
-            point2.Y = e.Y;
         }
 
-        private void tbDirection_Scroll(object sender, EventArgs e)
-        {
-            emitter.Direction = tbDirection.Value;
-            lblDirection.Text = $"{tbDirection.Value}°";
-        }
-
-        private void tbSpreading_Scroll(object sender, EventArgs e)
-        {
-            emitter.Spreading = tbSpreading.Value;
-            lblSpreading.Text = $"{tbSpreading.Value}°";
-        }
-
-        private void tbGraviton_Scroll(object sender, EventArgs e)
-        {
-            point1.Power = tbGraviton.Value;
-        }
-
-        private void tbGraviton2_Scroll(object sender, EventArgs e)
-        {
-            point2.Power = tbGraviton2.Value;
-        }
     }
 }
