@@ -46,10 +46,9 @@ namespace ParticlesMenu
             this.RadPaint2 = new System.Windows.Forms.TrackBar();
             this.ColorPaint1 = new System.Windows.Forms.Button();
             this.ColorPaint2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.ColorEmitter2 = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.label7 = new System.Windows.Forms.Label();
+            this.tbRad = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadPaint1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YPaint1)).BeginInit();
@@ -57,6 +56,7 @@ namespace ParticlesMenu
             ((System.ComponentModel.ISupportInitialize)(this.XPaint2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YPaint2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadPaint2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbRad)).BeginInit();
             this.SuspendLayout();
             // 
             // picDisplay
@@ -202,24 +202,6 @@ namespace ParticlesMenu
             this.ColorPaint2.UseVisualStyleBackColor = true;
             this.ColorPaint2.Click += new System.EventHandler(this.ColorPaint2_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(311, 667);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Круг 3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // ColorEmitter2
-            // 
-            this.ColorEmitter2.Location = new System.Drawing.Point(311, 696);
-            this.ColorEmitter2.Name = "ColorEmitter2";
-            this.ColorEmitter2.Size = new System.Drawing.Size(75, 23);
-            this.ColorEmitter2.TabIndex = 16;
-            this.ColorEmitter2.Text = "Круг 4";
-            this.ColorEmitter2.UseVisualStyleBackColor = true;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -229,14 +211,21 @@ namespace ParticlesMenu
             this.label7.TabIndex = 17;
             this.label7.Text = "Цвет кругов";
             // 
+            // tbRad
+            // 
+            this.tbRad.Location = new System.Drawing.Point(151, 667);
+            this.tbRad.Maximum = 100;
+            this.tbRad.Name = "tbRad";
+            this.tbRad.Size = new System.Drawing.Size(171, 45);
+            this.tbRad.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 763);
+            this.Controls.Add(this.tbRad);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.ColorEmitter2);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.ColorPaint2);
             this.Controls.Add(this.ColorPaint1);
             this.Controls.Add(this.label4);
@@ -261,6 +250,7 @@ namespace ParticlesMenu
             ((System.ComponentModel.ISupportInitialize)(this.XPaint2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YPaint2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadPaint2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbRad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,10 +274,9 @@ namespace ParticlesMenu
         private System.Windows.Forms.TrackBar RadPaint2;
         private System.Windows.Forms.Button ColorPaint1;
         private System.Windows.Forms.Button ColorPaint2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button ColorEmitter2;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TrackBar tbRad;
     }
 }
 

@@ -50,11 +50,12 @@ namespace ParticlesMenu
                 Y = (picDisplay.Height / 2) - 100,
                 Rad = 50,
             };
-
+            tbRad.Value = 50; 
 
             emitter.impactPoints.Add(paint1);
             emitter.impactPoints.Add(paint2);
 
+            
         }
 
 
@@ -79,10 +80,34 @@ namespace ParticlesMenu
         
         private void picDisplay_MouseMove(object sender, MouseEventArgs e)
         {
-            foreach (var emitter in emitters)
+            if (e.Button == MouseButtons.Left)
             {
-                emitter.MousePositionX = e.X;
-                emitter.MousePositionY = e.Y;
+                emitter.impactPoints.Add(new CounterPoint
+                {
+                    X = e.X,
+                    Y = e.Y,
+                    Rad = tbRad.Value,
+                });
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                foreach (var point in emitter.impactPoints.ToArray())
+                {
+                    //Если impactpoint - счётчик
+                    if (point is CounterPoint)
+                    {
+                        //то проверяем на пересечение с местом клика мышью
+                        CounterPoint cpoint = point as CounterPoint;
+                        float gX = cpoint.X - e.X;
+                        float gY = cpoint.Y - e.Y;
+                        double r = Math.Sqrt((gX * gX) + (gY * gY));
+                        if (r <= cpoint.Rad)
+                        {
+                            //и при пересечении удаляем счётчик.
+                            emitter.impactPoints.Remove(point);
+                        }
+                    }
+                }
             }
         }
 
@@ -129,6 +154,13 @@ namespace ParticlesMenu
             colorDialog.ShowDialog();
             paint2.PointColor = colorDialog.Color;
             ColorPaint2.BackColor = paint2.PointColor;
+        }
+
+        
+
+        private void tbRad_Scroll(object sender, EventArgs e)
+        {
+
         }
     }
 }
