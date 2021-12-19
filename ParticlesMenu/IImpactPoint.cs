@@ -20,13 +20,7 @@ namespace ParticlesMenu
         // базовый класс для отрисовки точечки
         public virtual void Render(Graphics g)
         {
-            g.FillEllipse(
-                    new SolidBrush(Color.Red),
-                    X - 5,
-                    Y - 5,
-                    10,
-                    10
-                );
+            g.FillEllipse( new SolidBrush(Color.Red), X - 5, Y - 5, 10, 10);
         }
     }
     public class GravityPoint : IImpactPoint
@@ -59,33 +53,6 @@ namespace ParticlesMenu
                    Power,
                    Power
                );
-
-       //     var stringFormat = new StringFormat(); // создаем экземпляр класса
-       //     stringFormat.Alignment = StringAlignment.Center; // выравнивание по горизонтали
-       //     stringFormat.LineAlignment = StringAlignment.Center; // выравнивание по вертикали
-
-       //     var text = $"Я гравитон\nc силой {Power}";
-       //     var font = new Font("Verdana", 10);
-
-       //     // вызываем MeasureString, чтобы померить размеры текста
-       //     var size = g.MeasureString(text, font);
-
-       //     g.FillRectangle(
-       //    new SolidBrush(Color.Red),
-       //    X - size.Width / 2, // так как я выравнивал текст по центру то подложка должна быть центрирована относительно X,Y
-       //    Y - size.Height / 2,
-       //    size.Width,
-       //    size.Height
-       //);
-
-       //     g.DrawString(
-       //     text,
-       //     font,
-       //     new SolidBrush(Color.White),
-       //     X,
-       //     Y,
-       //     stringFormat
-       // );
         }
     }
     public class AntiGravityPoint : IImpactPoint
@@ -101,6 +68,72 @@ namespace ParticlesMenu
 
             particle.SpeedX -= gX * Power / r2; 
             particle.SpeedY -= gY * Power / r2; 
+        }
+    }
+
+    public class PainterPoint : IImpactPoint
+    {
+        public Color PointColor = Color.White;
+        public float Rad = 15;
+
+        public override void ImpactParticle(Particle particle)
+        {
+            //Проверка попадания частицы в радиус круга
+            float gX = X - particle.X;
+            float gY = Y - particle.Y;
+
+            double r = Math.Sqrt(gX * gX + gY * gY);
+
+            if (r - particle.Radius < Rad)
+            {
+                particle.Color1 = PointColor;
+                particle.Color0 = Color.FromArgb(0, PointColor);
+            }
+        }
+
+        public override void Render(Graphics g)
+        {
+            g.DrawEllipse(new Pen(new SolidBrush(PointColor), 2), X - Rad, Y - Rad, Rad * 2, Rad * 2);
+        }
+    }
+
+    public class CounterPoint : IImpactPoint
+    {
+        public int Count = 0;
+        public float Rad = 15;
+
+        public override void ImpactParticle(Particle particle)
+        {
+            //Проверка попадания частицы в радиус круга
+            float gX = X - particle.X;
+            float gY = Y - particle.Y;
+
+            double r = Math.Sqrt(gX * gX + gY * gY);
+
+            if (r - particle.Radius < Rad)
+            {
+                particle.Life = 0;
+                Count++;
+            }
+        }
+
+        public override void Render(Graphics g)
+        {
+            g.FillEllipse(new SolidBrush(Color.FromArgb(100, Color.Red)), X - Rad, Y - Rad, Rad * 2, Rad * 2);
+            g.DrawEllipse(new Pen(new SolidBrush(Color.White), 2), X - Rad, Y - Rad, Rad * 2, Rad * 2);
+
+            var stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Center;
+            stringFormat.LineAlignment = StringAlignment.Center;
+
+            g.DrawString(
+            $"{Count}",
+            new Font("Verdana", 10),
+            new SolidBrush(Color.White),
+            X,
+            Y,
+            stringFormat
+        );
         }
     }
 }

@@ -17,6 +17,10 @@ namespace ParticleMenu
         public float SpeedY;
         public float Life;
         public static Random rand = new Random();
+
+        public Color Color0;
+        public Color Color1;
+
         public Particle()
         {
             var direction = (double)rand.Next(360);
@@ -50,9 +54,7 @@ namespace ParticleMenu
     }
     public class ParticleColorful : Particle
     {
-        // два новых поля под цвет начальный и конечный
-        public Color FromColor;
-        public Color ToColor;
+       
 
         // для смеси цветов
         public static Color MixColor(Color color1, Color color2, float k)
@@ -71,7 +73,7 @@ namespace ParticleMenu
             float k = Math.Min(1f, Life / 100);
 
             // так как k уменьшается от 1 до 0, то порядок цветов обратный
-            var color = MixColor(ToColor, FromColor, k);
+            var color = MixColor(Color0, Color1, k);
             var b = new SolidBrush(color);
 
             g.FillEllipse(b, X - Radius, Y - Radius, Radius * 2, Radius * 2);
