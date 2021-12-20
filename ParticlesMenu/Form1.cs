@@ -50,15 +50,23 @@ namespace ParticlesMenu
                 Y = (picDisplay.Height / 2) - 100,
                 Rad = 50,
             };
-            tbRad.Value = 50; 
+            
 
             emitter.impactPoints.Add(paint1);
             emitter.impactPoints.Add(paint2);
 
-            
+            StartForm();
         }
 
-
+        public void StartForm() {
+            tbRad.Value = 50;
+            XPaint1.Value = (int)paint1.X;
+            YPaint1.Value = (int)paint1.Y;
+            XPaint2.Value = (int)paint2.X;
+            YPaint2.Value = (int)paint2.Y;
+            RadPaint1.Value = (int)paint1.Rad;
+            RadPaint2.Value = (int)paint2.Rad;
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
