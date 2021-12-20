@@ -79,9 +79,11 @@ namespace ParticlesMenu
             // 
             this.RadPaint1.Location = new System.Drawing.Point(15, 595);
             this.RadPaint1.Maximum = 100;
+            this.RadPaint1.Minimum = 10;
             this.RadPaint1.Name = "RadPaint1";
             this.RadPaint1.Size = new System.Drawing.Size(189, 45);
             this.RadPaint1.TabIndex = 1;
+            this.RadPaint1.Value = 10;
             this.RadPaint1.Scroll += new System.EventHandler(this.RadPaint1_Scroll);
             // 
             // YPaint1
@@ -178,9 +180,11 @@ namespace ParticlesMenu
             // 
             this.RadPaint2.Location = new System.Drawing.Point(279, 595);
             this.RadPaint2.Maximum = 100;
+            this.RadPaint2.Minimum = 10;
             this.RadPaint2.Name = "RadPaint2";
             this.RadPaint2.Size = new System.Drawing.Size(189, 45);
             this.RadPaint2.TabIndex = 7;
+            this.RadPaint2.Value = 10;
             this.RadPaint2.Scroll += new System.EventHandler(this.RadPaint2_Scroll);
             // 
             // ColorPaint1
@@ -216,9 +220,11 @@ namespace ParticlesMenu
             // 
             this.tbRad.Location = new System.Drawing.Point(225, 674);
             this.tbRad.Maximum = 100;
+            this.tbRad.Minimum = 10;
             this.tbRad.Name = "tbRad";
             this.tbRad.Size = new System.Drawing.Size(171, 45);
             this.tbRad.TabIndex = 18;
+            this.tbRad.Value = 50;
             // 
             // label8
             // 
