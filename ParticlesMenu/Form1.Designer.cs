@@ -30,6 +30,7 @@ namespace ParticlesMenu
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.picDisplay = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.RadPaint1 = new System.Windows.Forms.TrackBar();
@@ -258,8 +259,9 @@ namespace ParticlesMenu
             this.Controls.Add(this.YPaint1);
             this.Controls.Add(this.RadPaint1);
             this.Controls.Add(this.picDisplay);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ParticlesMenu";
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadPaint1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YPaint1)).EndInit();
