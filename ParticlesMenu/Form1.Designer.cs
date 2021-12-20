@@ -110,54 +110,54 @@ namespace ParticlesMenu
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 442);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 13);
+            this.label1.Size = new System.Drawing.Size(191, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Перемещение по вертикали";
+            this.label1.Text = "Перемещение по вертикали 1 круга";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 515);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 13);
+            this.label2.Size = new System.Drawing.Size(202, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Перемещение по горизонтали";
+            this.label2.Text = "Перемещение по горизонтали 1 круга";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 579);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Радиус";
+            this.label3.Text = "Радиус 1 круга";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(279, 579);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Радиус";
+            this.label4.Text = "Радиус 2 круга";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(279, 515);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 13);
+            this.label5.Size = new System.Drawing.Size(202, 13);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Перемещение по горизонтали";
+            this.label5.Text = "Перемещение по горизонтали 2 круга";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(279, 442);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 13);
+            this.label6.Size = new System.Drawing.Size(191, 13);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Перемещение по вертикали";
+            this.label6.Text = "Перемещение по вертикали 2 круга";
             // 
             // XPaint2
             // 
