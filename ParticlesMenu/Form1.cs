@@ -85,39 +85,6 @@ namespace ParticlesMenu
             picDisplay.Invalidate();
         }
         
-        
-        private void picDisplay_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                emitter.impactPoints.Add(new CounterPoint
-                {
-                    X = e.X,
-                    Y = e.Y,
-                    Rad = tbRad.Value,
-                });
-            }
-            if (e.Button == MouseButtons.Right)
-            {
-                foreach (var point in emitter.impactPoints.ToArray())
-                {
-                    //Если impactpoint - счётчик
-                    if (point is CounterPoint)
-                    {
-                        //то проверяем на пересечение с местом клика мышью
-                        CounterPoint cpoint = point as CounterPoint;
-                        float gX = cpoint.X - e.X;
-                        float gY = cpoint.Y - e.Y;
-                        double r = Math.Sqrt((gX * gX) + (gY * gY));
-                        if (r <= cpoint.Rad)
-                        {
-                            //и при пересечении удаляем счётчик.
-                            emitter.impactPoints.Remove(point);
-                        }
-                    }
-                }
-            }
-        }
 
         private void XPaint1_Scroll(object sender, EventArgs e)
         {
@@ -149,7 +116,6 @@ namespace ParticlesMenu
             paint2.Rad = RadPaint2.Value;
         }
 
-
         private void ColorPaint1_Click(object sender, EventArgs e)
         {
             colorDialog.ShowDialog();
@@ -164,6 +130,37 @@ namespace ParticlesMenu
             ColorPaint2.BackColor = paint2.PointColor;
         }
 
-        
+        private void picDisplay_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                emitter.impactPoints.Add(new CounterPoint
+                {
+                    X = e.X,
+                    Y = e.Y,
+                    Rad = tbRad.Value,
+                });
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                foreach (var point in emitter.impactPoints.ToArray())
+                {
+                    //Если impactpoint - счётчик
+                    if (point is CounterPoint)
+                    {
+                        //то проверяем на пересечение с местом клика мышью
+                        CounterPoint cpoint = point as CounterPoint;
+                        float gX = cpoint.X - e.X;
+                        float gY = cpoint.Y - e.Y;
+                        double r = Math.Sqrt((gX * gX) + (gY * gY));
+                        if (r <= cpoint.Rad)
+                        {
+                            //и при пересечении удаляем счётчик.
+                            emitter.impactPoints.Remove(point);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

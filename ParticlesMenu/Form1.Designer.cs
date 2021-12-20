@@ -49,6 +49,7 @@ namespace ParticlesMenu
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.label7 = new System.Windows.Forms.Label();
             this.tbRad = new System.Windows.Forms.TrackBar();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadPaint1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YPaint1)).BeginInit();
@@ -66,7 +67,7 @@ namespace ParticlesMenu
             this.picDisplay.Size = new System.Drawing.Size(776, 426);
             this.picDisplay.TabIndex = 0;
             this.picDisplay.TabStop = false;
-            this.picDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picDisplay_MouseMove);
+            this.picDisplay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picDisplay_MouseClick);
             // 
             // timer1
             // 
@@ -95,7 +96,7 @@ namespace ParticlesMenu
             // XPaint1
             // 
             this.XPaint1.Location = new System.Drawing.Point(12, 458);
-            this.XPaint1.Maximum = 800;
+            this.XPaint1.Maximum = 780;
             this.XPaint1.Name = "XPaint1";
             this.XPaint1.Size = new System.Drawing.Size(189, 45);
             this.XPaint1.TabIndex = 3;
@@ -158,7 +159,7 @@ namespace ParticlesMenu
             // XPaint2
             // 
             this.XPaint2.Location = new System.Drawing.Point(279, 458);
-            this.XPaint2.Maximum = 800;
+            this.XPaint2.Maximum = 780;
             this.XPaint2.Name = "XPaint2";
             this.XPaint2.Size = new System.Drawing.Size(189, 45);
             this.XPaint2.TabIndex = 9;
@@ -186,7 +187,7 @@ namespace ParticlesMenu
             // 
             this.ColorPaint1.Location = new System.Drawing.Point(7, 667);
             this.ColorPaint1.Name = "ColorPaint1";
-            this.ColorPaint1.Size = new System.Drawing.Size(75, 23);
+            this.ColorPaint1.Size = new System.Drawing.Size(156, 23);
             this.ColorPaint1.TabIndex = 13;
             this.ColorPaint1.Text = "Круг 1";
             this.ColorPaint1.UseVisualStyleBackColor = true;
@@ -196,7 +197,7 @@ namespace ParticlesMenu
             // 
             this.ColorPaint2.Location = new System.Drawing.Point(7, 696);
             this.ColorPaint2.Name = "ColorPaint2";
-            this.ColorPaint2.Size = new System.Drawing.Size(75, 23);
+            this.ColorPaint2.Size = new System.Drawing.Size(156, 23);
             this.ColorPaint2.TabIndex = 14;
             this.ColorPaint2.Text = "Круг 2";
             this.ColorPaint2.UseVisualStyleBackColor = true;
@@ -205,7 +206,7 @@ namespace ParticlesMenu
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(52, 651);
+            this.label7.Location = new System.Drawing.Point(48, 643);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 17;
@@ -213,17 +214,27 @@ namespace ParticlesMenu
             // 
             // tbRad
             // 
-            this.tbRad.Location = new System.Drawing.Point(151, 667);
+            this.tbRad.Location = new System.Drawing.Point(225, 674);
             this.tbRad.Maximum = 100;
             this.tbRad.Name = "tbRad";
             this.tbRad.Size = new System.Drawing.Size(171, 45);
             this.tbRad.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(222, 643);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Размер счетчиков";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 763);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.tbRad);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ColorPaint2);
@@ -277,6 +288,7 @@ namespace ParticlesMenu
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TrackBar tbRad;
+        private System.Windows.Forms.Label label8;
     }
 }
 
