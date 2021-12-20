@@ -94,7 +94,8 @@ namespace ParticlesMenu
         {
             particle.Life = Particle.rand.Next(LifeMin, LifeMax);
 
-            
+            particle.Color1 = ColorFrom;
+            particle.Color0 = ColorTo;
 
             particle.X = X;
             particle.Y = Y;
