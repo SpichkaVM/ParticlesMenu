@@ -89,7 +89,7 @@ namespace ParticlesMenu
                     Rad = tbRad.Value,
                 });
             }
-            else if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 foreach (var point in emitter.impactPoints.ToArray())
                 {
@@ -157,10 +157,5 @@ namespace ParticlesMenu
         }
 
         
-
-        private void tbRad_Scroll(object sender, EventArgs e)
-        {
-
-        }
     }
 }
